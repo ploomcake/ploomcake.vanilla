@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules
+    xmlns="http://namespaces.plone.org/diazo"
+    xmlns:css="http://namespaces.plone.org/diazo/css"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+    <rules css:if-content="#visual-portal-wrapper">
+
+        <theme href="theme_nocolumn.html" css:if-content="body.has-no-columns" />
+        <theme href="theme_column.html" />
+    
+        <!-- Head elements -->
+        <replace css:content="html head title" css:theme="html head title" />
+        <replace css:content="html head meta[description]" css:theme="html head meta[description]" />
+
+        <!-- css -->
+        <replace css:content="html head link[rel=stylesheet], html style" css:theme="html link[reset=plone]" />
+
+        <after css:content="html head base"   css:theme-children="html head" />
+        <after css:content="html head script" css:theme-children="html head"  />
+
+        <!-- body classes -->
+        <copy attributes="class" css:content="body" css:theme="body" />
+
+
+        <!-- Logo -->
+        <copy attributes="href" css:theme="#brand" css:content="#portal-logo" />
+
+        <!-- Tabs -->
+        <replace css:theme-children="#tabs" css:content-children="#portal-globalnav" />
+
+        <!-- Personal tools -->
+        <replace css:theme="#account-info" css:content="#portal-personaltools" />
+
+        <!-- Search -->
+        <copy attributes="action" css:theme="#searchbox" css:content="#portal-searchbox form" />
+        <copy attributes="name" css:theme="#searchbox .search-query" css:content="#portal-searchbox form .searchField" />
+
+        <!-- Edit bar -->
+        <before css:theme-children="#content" css:content="#edit-bar" />
+
+        <!-- Portal messages (da testare) -->
+        <after css:content=".portalMessage"   css:theme="#viewlets-above-content" />
+        
+        <!-- Drop the row class on content -->
+        <drop css:content=".row" attributes="class" />
+        <!-- Main columns -->
+        <replace css:content-children="#content" css:theme-children="#content" />
+        <replace css:content-children="#portal-column-one" css:theme-children="#left-column" />
+        <replace css:content-children="#portal-column-two" css:theme-children="#right-column" />
+
+
+        <!-- below content body -->
+        <replace css:content-children="#viewlet-below-content-body" css:theme-children="#viewlets-below-content-body" />
+
+        <!-- below content -->
+        <replace css:content-children="#viewlet-below-content" css:theme-children="#viewlets-below-content" />
+
+
+        <!-- Portlets -->
+        <replace css:content-children="#portlets-in-header" css:theme-children="#portlets-header" />
+        <replace css:content-children="#viewlet-above-content" css:theme-children="#viewlets-above-content" />
+
+
+        <!-- Footer -->
+        <replace css:theme-children="#footer" css:content-children=".footer-container" />
+<!--        <after css:theme-children="#footer" css:content="#portal-siteactions" />-->
+
+    </rules>
+
+</rules>

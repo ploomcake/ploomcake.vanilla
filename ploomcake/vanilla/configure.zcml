@@ -1,0 +1,26 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="ploomcake.vanilla">
+
+  <includeDependencies package="." />
+  
+  <!-- Register the /++theme++ploomcake.vanilla/ static resource directory -->
+  <plone:static
+      directory="resources"
+      type="theme"
+      />
+
+
+  <genericsetup:registerProfile
+      name="default"
+      title="ploomcake.vanilla"
+      directory="profiles/default"
+      description="Installs the ploomcake.vanilla package"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+  
+</configure>
