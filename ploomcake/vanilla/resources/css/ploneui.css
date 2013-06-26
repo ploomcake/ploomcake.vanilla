@@ -1165,12 +1165,79 @@ table.listing th{
 table.listing thead th{
     vertical-align: bottom;
 }
+
 table.listing th,
-table.listing td, {
+table.listing td{
     padding: 8px;
     line-height: 20px;
     text-align: left;
     vertical-align: top;
     border-top: 1px solid #ddd;
+}
+
+table.listing caption+thead tr:first-child th,
+table.listing caption+thead tr:first-child td,
+table.listing colgroup+thead tr:first-child th,
+table.listing colgroup+thead tr:first-child td,
+table.listing thead:first-child tr:first-child th,
+table.listing thead:first-child tr:first-child td {
+    border-top: 0;
+}
+
+/*search reset */
+.searchReset {
+    width:18px;
+    height:20px;
+    border:none;
+    background:transparent;
+    cursor:pointer;
+    visibility:hidden;
+    margin-left: -24px;
+    margin-top: 5px;
+    position: absolute;
+}
+
+
+.searchReset:focus{
+    border:none ;
+    outline:none;
+}
+.searchPage .searchReset{
+    position:absolute;
+    margin-top:8px;
+    margin-left:-25px;
+}
+.searchPage[type=text]{
+    padding-right: 26px;
+}
+
+
+#search-results-bar > * {
+    float: left;
+}
+#searchResultsSort{
+	float:right;
+}
+#search-results-bar {
+    position: relative;
+    z-index: 1;
+    float: left;
+    width: 100%;
+    border-top: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+    padding: 1em 0;
+}
+#search-results-bar dl.actionMenu {
+    margin-bottom: 0;
+}
+#search-results-bar dd.actionMenuContent {
+    margin-left: 0;
+    padding-left: 0;
+}
+#search-results-bar dt.actionMenuHeader a {
+    border-bottom: none;
+}
+#search-results-bar dt.actionMenuHeader a::after {
+	content: " ▼";
 }
 /* @end */
