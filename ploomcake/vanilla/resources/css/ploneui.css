@@ -14,7 +14,15 @@
  /* @group Content */
 
 .hiddenStructure {
-    display: none;
+    display: block;
+    background: transparent;
+    background-image: none;
+    border: none;
+    height: 0.1em;
+    overflow: hidden;
+    padding: 0;
+    margin: -0.1em 0 0 -0.1em;
+    width: 1px;
 }
 
 #content .documentDescription,
@@ -654,6 +662,14 @@ dl.collapsedInlineCollapsible dt.collapsibleHeader {
     margin: 1em;
 }
 
+.formQuestion.label {
+    background-color: transparent;
+    color: #333;
+    font-size: 14px;
+    display: block;
+    line-height: 1.2em;
+}
+
 .label {
     font-weight: bold;
     display: inline;
@@ -810,7 +826,11 @@ input#title {
 .formHelp {
     color: #555;
     margin: 0 0 0.2em 0;
+    display: block;
+    font-weight: normal;
 }
+
+
 div.field.error {
     background-color: #fdc;
     border:  1px solid red;
@@ -1104,4 +1124,53 @@ dl.portlet ul.navTree .navTreeCurrentItem {
     text-decoration: none;
 }
 
+
+.template-atct_edit select{
+    width: auto;
+}
+
+#kss-spinner {
+    display: none;
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    background-position: center center;
+    top: 50%;
+    left: 50%;
+    margin-top: -10px;
+    margin-left: -10px;
+}
+
+div.managePortletsLink, a.managePortletsFallback{
+    text-align: center;
+    padding: 0.25em 0.5em;
+    font-size: 80%;
+    margin: 0 auto 1em;
+    background: #ddd;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+}
+
+
+table.listing{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+table.listing th{
+    font-weight: bold;
+}
+
+table.listing thead th{
+    vertical-align: bottom;
+}
+table.listing th,
+table.listing td, {
+    padding: 8px;
+    line-height: 20px;
+    text-align: left;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}
 /* @end */
